@@ -1,8 +1,8 @@
 ---
 title: "Candy Ranking"
-author: "Amber Camp"
-date: 11/2/26
-format: 
+author: "Ozias Reyes"
+date: "11/2/26"
+format:
   dashboard:
     theme: quartz
 ---
@@ -15,13 +15,12 @@ library(fivethirtyeight)
 candy <- fivethirtyeight::candy_rankings 
 
 candy <- candy |> 
-  mutate(type = case_when(
+  mutate(type ~ case_when(
     chocolate & fruity ~ "both",
     chocolate ~ "chocolate",
     fruity ~ "fruity",
     .default = "other"
   ))
-
 # count(candy, type)
 ```
 
