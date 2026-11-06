@@ -6,7 +6,7 @@ website:
   title: "dashboards"
   navbar:
     left:
-      - href: ozias808.github.io
+      - href: ozias808.github.io/dashboards/
         text: Home
       - about.qmd
 

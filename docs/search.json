@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Sample Dashboards Projects",
     "section": "",
-    "text": "candy project\n\ncandy &lt;- candy |&gt; mutate(type ~ case_when( chocolate & fruity ~ “both”, chocolate ~ “chocolate”, fruity ~ “fruity”, .default = “other”\nboxplot &lt;- ggplot(candy, aes(type, winpercent, color = type, fill = type)) + geom_boxplot(alpha = 0.15, width = 0.55, outlier.shape = NA) + geom_jitter(width = 0.1) + theme_minimal() + labs(y = “Win %”, x = “Candy Type”)\nggplotly(boxplot)\nbar &lt;- ggplot(candy, aes(winpercent, reorder(competitorname, winpercent), fill = type)) + geom_col() + theme(axis.text.y = element_text(size = 4)) + labs(y = “Candy Name”, x = “Win %”)\nggplotly(bar)"
+    "text": "candy project\nPenguin Palmer Dashboard\nMy website\n\ncandy &lt;- candy |&gt; mutate(type ~ case_when( chocolate & fruity ~ “both”, chocolate ~ “chocolate”, fruity ~ “fruity”, .default = “other”\nboxplot &lt;- ggplot(candy, aes(type, winpercent, color = type, fill = type)) + geom_boxplot(alpha = 0.15, width = 0.55, outlier.shape = NA) + geom_jitter(width = 0.1) + theme_minimal() + labs(y = “Win %”, x = “Candy Type”)\nggplotly(boxplot)\nbar &lt;- ggplot(candy, aes(winpercent, reorder(competitorname, winpercent), fill = type)) + geom_col() + theme(axis.text.y = element_text(size = 4)) + labs(y = “Candy Name”, x = “Win %”)\nggplotly(bar)"
   },
   {
     "objectID": "candy.html",
