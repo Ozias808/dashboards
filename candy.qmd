@@ -12,15 +12,7 @@ library(tidyverse)
 library(plotly)
 library(fivethirtyeight) 
 
-candy <- fivethirtyeight::candy_rankings 
-
-candy <- candy |> 
-  mutate(type ~ case_when(
-    chocolate & fruity ~ "both",
-    chocolate ~ "chocolate",
-    fruity ~ "fruity",
-    .default = "other"
-  ))
+candy <- fivethirtyeight::candy_rankings
 # count(candy, type)
 ```
 
@@ -62,22 +54,9 @@ list(
 ## Row 2
 
 ```{r}
-boxplot <- ggplot(candy, aes(type, winpercent, color = type, fill = type)) + 
-  geom_boxplot(alpha = 0.15, width = 0.55, outlier.shape = NA) + 
-  geom_jitter(width = 0.1) +
-  theme_minimal() +
-  labs(y = "Win %",
-       x = "Candy Type")
 
-ggplotly(boxplot)
 ```
 
 ```{r}
-bar <- ggplot(candy, aes(winpercent, reorder(competitorname, winpercent), fill = type)) +
-  geom_col() +
-  theme(axis.text.y = element_text(size = 4)) +
-  labs(y = "Candy Name",
-       x = "Win %")
 
-ggplotly(bar)
 ```

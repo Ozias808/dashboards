@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Sample Dashboards Projects",
+    "section": "",
+    "text": "candy project\n\ncandy &lt;- candy |&gt; mutate(type ~ case_when( chocolate & fruity ~ “both”, chocolate ~ “chocolate”, fruity ~ “fruity”, .default = “other”\nboxplot &lt;- ggplot(candy, aes(type, winpercent, color = type, fill = type)) + geom_boxplot(alpha = 0.15, width = 0.55, outlier.shape = NA) + geom_jitter(width = 0.1) + theme_minimal() + labs(y = “Win %”, x = “Candy Type”)\nggplotly(boxplot)\nbar &lt;- ggplot(candy, aes(winpercent, reorder(competitorname, winpercent), fill = type)) + geom_col() + theme(axis.text.y = element_text(size = 4)) + labs(y = “Candy Name”, x = “Win %”)\nggplotly(bar)"
+  },
+  {
+    "objectID": "candy.html",
+    "href": "candy.html",
+    "title": "Candy Ranking",
+    "section": "",
+    "text": "list(\n  icon = \"basket\", \n  color = \"warning\", \n  value = nrow(candy))\n\n$icon\n[1] \"basket\"\n\n$color\n[1] \"warning\"\n\n$value\n[1] 85\n\n\n\nlist(\n  icon = \"heart-fill\",\n  color = \"#E4572E\",\n  value = sum(candy$type == \"fruity\"))\n\nWarning: Unknown or uninitialised column: `type`.\n\n\n$icon\n[1] \"heart-fill\"\n\n$color\n[1] \"#E4572E\"\n\n$value\n[1] 0\n\n\n\nlist(\n  icon = \"heart\",\n  color = \"#7B4B2A\",\n  value = sum(candy$type == \"chocolate\"))\n\nWarning: Unknown or uninitialised column: `type`.\n\n\n$icon\n[1] \"heart\"\n\n$color\n[1] \"#7B4B2A\"\n\n$value\n[1] 0"
+  },
+  {
+    "objectID": "candy.html#row-1",
+    "href": "candy.html#row-1",
+    "title": "Candy Ranking",
+    "section": "",
+    "text": "list(\n  icon = \"basket\", \n  color = \"warning\", \n  value = nrow(candy))\n\n$icon\n[1] \"basket\"\n\n$color\n[1] \"warning\"\n\n$value\n[1] 85\n\n\n\nlist(\n  icon = \"heart-fill\",\n  color = \"#E4572E\",\n  value = sum(candy$type == \"fruity\"))\n\nWarning: Unknown or uninitialised column: `type`.\n\n\n$icon\n[1] \"heart-fill\"\n\n$color\n[1] \"#E4572E\"\n\n$value\n[1] 0\n\n\n\nlist(\n  icon = \"heart\",\n  color = \"#7B4B2A\",\n  value = sum(candy$type == \"chocolate\"))\n\nWarning: Unknown or uninitialised column: `type`.\n\n\n$icon\n[1] \"heart\"\n\n$color\n[1] \"#7B4B2A\"\n\n$value\n[1] 0"
+  },
+  {
+    "objectID": "candy.html#row-2",
+    "href": "candy.html#row-2",
+    "title": "Candy Ranking",
+    "section": "Row 2",
+    "text": "Row 2"
+  }
+]

@@ -1,13 +1,19 @@
 ---
-use---
-title: "dashboards"
+title: "Sample Dashboards Projects"
+author: "Ozias Reyes"
+format: html
 ---
 
-This is a Quarto website.
+- [candy project](https://ozias808.github.io/dashboards/candy.html)
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+- Penguin Palmer Dashboard
 
-```{r}
+candy \<- candy \|\> mutate(type \~ case_when( chocolate & fruity \~ "both", chocolate \~ "chocolate", fruity \~ "fruity", .default = "other"
 
+boxplot \<- ggplot(candy, aes(type, winpercent, color = type, fill = type)) + geom_boxplot(alpha = 0.15, width = 0.55, outlier.shape = NA) + geom_jitter(width = 0.1) + theme_minimal() + labs(y = "Win %", x = "Candy Type")
 
-```
+ggplotly(boxplot)
+
+bar \<- ggplot(candy, aes(winpercent, reorder(competitorname, winpercent), fill = type)) + geom_col() + theme(axis.text.y = element_text(size = 4)) + labs(y = "Candy Name", x = "Win %")
+
+ggplotly(bar)
