@@ -8,7 +8,7 @@ format: html
 
 - Penguin Palmer Dashboard
 
-- [My website](ozias808.github.io)
+- [My website](https://ozias808.github.io/)
 
 candy \<- candy \|\> mutate(type \~ case_when( chocolate & fruity \~ "both", chocolate \~ "chocolate", fruity \~ "fruity", .default = "other"
 
