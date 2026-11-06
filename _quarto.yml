@@ -5,10 +5,8 @@ project:
 website:
   title: "dashboards"
   navbar:
-    left:
-      - href: ozias808.github.io/dashboards/
-        text: Home
-      - about.qmd
+      left:
+    -
 
 format:
   html:
