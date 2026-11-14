@@ -6,7 +6,7 @@ website:
   title: "dashboards"
   navbar:
       left:
-    -
+    
 
 format:
   html:

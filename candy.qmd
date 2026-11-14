@@ -30,33 +30,53 @@ list(
 ```
 
 ```{r}
-#| content: valuebox
-#| title: "Number of Fruity Candies"
 
-
-list(
-  icon = "heart-fill",
-  color = "#E4572E",
-  value = sum(candy$type == "fruity"))
 
 ```
 
 ```{r}
-#| content: valuebox
-#| title: "Number of Chocolate Candies"
 
-list(
-  icon = "heart",
-  color = "#7B4B2A",
-  value = sum(candy$type == "chocolate"))
 ```
 
 ## Row 2
 
 ```{r}
+scatter <- ggplot(candy,
+  aes(
+    pricepercent,
+    winpercent,
+    text = competitorname
+  )
+) +
+  geom_point(size = 1) +
+  theme_minimal() +
+  labs(
+    title = "Best Bang for Your Buck",
+    x = "Price %",
+    y = "Win %")
 
+ggplotly(scatter, tooltip = "text")
+
+candy <- candy |>
+  mutate(
+    value_score = winpercent / (pricepercent + 0.01)
+  )
 ```
 
 ```{r}
+best_value <- candy |>
+  arrange(desc(value_score)) |>
+  select(
+    competitorname,
+    pricepercent,
+    winpercent,
+    value_score
+  ) |>
+  slice_head(n = 10)
 
+knitr::kable(best_value, col.names = c(
+    "Candy Name",
+    "Price %",
+    "Win %",
+    "Value Score"))
 ```
