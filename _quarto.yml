@@ -5,8 +5,9 @@ project:
 website:
   title: "dashboards"
   navbar:
-      left:
-    
+    left:
+      - href: index.qmd
+        text: home
 
 format:
   html:
